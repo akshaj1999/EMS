@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Check In</title>
+       
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/static/css/style.css">
+		<link rel="stylesheet" href="/static/css/formstyle.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+	</head>
+	<body>
+        <div id="header">
+            <h1>INNOVACCER</h1>
+            <h2>WELCOMES YOU</h2>
+        </div>
+             
+        <div class="wrapper">
+			<div class="inner">
+				<img src="image-1.png" alt="" class="image-1">
+				<div id="form">
+					<h3>ENTER VISITOR DETAILS</h3>
+					<div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="text" class="form-control" id="name" placeholder="Username">
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-phone-handset"></span>
+						<input type="text" class="form-control" id="phone" placeholder="Phone Number">
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-envelope"></span>
+						<input type="text" class="form-control" id="email" placeholder="Mail">
+					</div>
+					<button class="btn" id="submit">
+						<span>CHECK IN</span>
+					</button>
+				</div>
+				<img src="/static/assests/image-2.png" alt="" class="image-2">
+			</div>
+		</div>
+        <button id="back" class="btn" onclick="location.href = '/visitor';"><i class="fa fa-angle-double-left"></i>&nbsp;back</button>
+	</body>
+	<script>
+			$(document).ready(function(){
+			 $("#submit").click(function(){
+				var na = document.getElementById("name").value;
+				var ema= document.getElementById("email").value;
+				var ph = document.getElementById("phone").value;
+			  axios.post('/in',{
+				  name : na,
+				  email : ema,
+				  phone: ph,
+			  })
+			   .then(function (response) {
+				   if(response.data.submit==="true")
+				   {
+					   alert("Welcome To Innovaccer");
+					   window.location.href = "/";
+				   }
+				   else if(response.data.submit==="not")
+				   {
+					   alert("No host found");
+					   window.location.href = "/";
+				   }
+				   else
+				   {
+					   alert("Sorry Try Again");
+				   }
+			   })
+			   .catch(function (error) {
+				   console.log(error);
+			   });
+			 });
+		   });
+   
+		   
+		   </script>
+</html>
