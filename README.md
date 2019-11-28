@@ -5,7 +5,7 @@ This is a web-portal to register meetings and track member behaviour.
 The interface allows users to host a meeting as well as check-in/out from a meeting. The backend is written using Node.js/Express.js and uses MongoDB for storage.
 The key features are: 
 * Email and SMS sent to host when visitor checks-in
-* Email and SMS sent to visitor when visitor checks-out<br/>
+* Email sent to visitor when visitor checks-out<br/>
 <b>Note:</b> `NextMO SMS API` is used to send SMS. Free subscription has been used, that allows SMS to be sent between `9:00am` and `9:00pm` only.
 
 ## Preview
