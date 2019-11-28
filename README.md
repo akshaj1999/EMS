@@ -6,7 +6,7 @@ The interface allows users to host a meeting as well as check-in/out from a meet
 The key features are: 
 * Email and SMS sent to host when visitor checks-in
 * Email sent to visitor when visitor checks-out<br/>
-<b>Note:</b> `NextMO SMS API` is used to send SMS. Free subscription has been used, that allows SMS to be sent between `9:00am` and `9:00pm` only.
+<b>Note:</b> `Nexmo SMS API` is used to send SMS. Free subscription has been used, that allows SMS to be sent between `9:00am` and `9:00pm` only.
 
 ## Preview
 ### Web Portal
