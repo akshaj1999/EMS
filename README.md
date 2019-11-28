@@ -24,7 +24,7 @@ The key features are:
 
 ### Back-End
 * Node.js/Express.js
-* MongoDB (Hosted on [mlabs](https://www.mongodb.com/cloud/atlas)) 
+* MongoDB (Hosted on [mongodb atlas](https://www.mongodb.com/cloud/atlas)) 
 
 ## Run Locally
 ### System Prerequistites
