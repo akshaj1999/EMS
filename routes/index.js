@@ -138,8 +138,8 @@ router.post('/out',function(req,res){
                             secure: true,
                             auth: {
                                 // should be replaced with real sender's account
-                                user: 'akshajjuneja9@gmail.com',
-                                pass: 'akshajkriti'
+                                user: 'hhost803@gmail.com',
+                                pass: 'HOST@123host'
                             }
                         });
                         let mailOptions = {
